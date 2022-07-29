@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+      var p1 = 6,
+        p2 = 7;
+      var totalprice = p1 + p2;
+      document.getElementById("demo").innerHTML = "Total price: " + totalprice;
+      let person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: "50",
+        eyeColor: "blue",
+      };
+      document.getElementById("demo1").innerHTML =
+        person.firstName + " , Age is " + person.age;
+
+      var n = Number("123");
+      n = n + 2;
+      var s = "2";
+      s = s + 2;
+      document.getElementById("demo").innerHTML =
+        "n (123+2) = " + n + ", s(2+2) = " + s;
+    </script>
+  </body>
+</html>
