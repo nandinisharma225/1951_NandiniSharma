@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    number of balls<input type="number" id="balls" /> number of members<input
+      type="number"
+      id="members"
+    />
+    <br />
+
+    <button onclick="func()">Click</button>
+
+    <p id="p1"></p>
+
+    <script>
+      function func() {
+        var noballs = document.getElementById("balls").value;
+        var nomembers = document.getElementById("members").value;
+        if (noballs < nomembers) {
+          document.getElementById("p1").innerHTML =
+            "balls: " +
+            parseInt(noballs / nomembers) +
+            " left balls: " +
+            (noballs % nomembers);
+        }
+      }
+    </script>
+  </body>
+</html>
