@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="n1" id="n1" />N1
+    <input type="text" name="n2" id="n2" />N2
+    <button onclick="func()">Click Me!!</button>
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+
+    <script>
+      function func() {
+        // alert("Hi how are you!!");
+        // document.getElementById("p1").innerHTML = "Hello";
+        // var n1 = "5";
+        // var n2 = "10";
+        // // if alphabets written --> output is NaN
+        // n1 = Number(n1);
+        // n2 = Number(n2);
+        var n1 = Number(document.getElementById("n1").value);
+        var n2 = Number(document.getElementById("n2").value);
+
+        if (!isNaN(n1) && !isNaN(n2)) {
+          n1 = Number(n1);
+          n2 = Number(n2);
+          document.getElementById("p1").innerHTML = n1 + n2;
+        } else {
+          document.getElementById("p1").innerHTML =
+            "<span style='color:red'>Please enter a numeric value.</span>";
+        }
+        document.getElementById("p2").innerHTML = Boolean(10 > 9)
+      }
+      // func();
+    </script>
+  </body>
+</html>
