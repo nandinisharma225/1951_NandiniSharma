@@ -1,0 +1,2 @@
+5 digits only in input box
+alert on empty input

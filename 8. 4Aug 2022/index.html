@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="inp1" />
+    <button onclick="myfunc()">Click</button>
+    <p id="pp"></p>
+    <script>
+      function myfunc() {
+        var myinp = document.getElementById("inp1").value;
+        var sum = 0;
+        // console.log(myinp);
+        for(let i=0;i<myinp;i++){
+            if(i%2==0){
+                document.getElementById("pp").innerHTML += i+" ";
+                sum += i;
+            }
+        }
+        document.getElementById("pp").innerHTML += "Sum is: "+sum;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="l" placeholder="l" />
+    <input type="number" id="r" placeholder="r" />
+    <input type="number" id="k" placeholder="k" />
+
+    <button onclick="myfunc()">Click</button>
+    <p id="pp"></p>
+    <div
+      id="mydd"
+      style="height: 100px; width: 100px; background-color: red"
+    ></div>
+    <br />
+    <button onclick="myff()">Change</button>
+    <script>
+      function myfunc() {
+        var lval = parseInt(document.getElementById("l").value);
+        var rval = parseInt(document.getElementById("r").value);
+        var kval = parseInt(document.getElementById("k").value);
+
+        var count = 0;
+
+        if (lval > rval) {
+          alert("Invalid input");
+          return;
+        } else {
+          for (let i = lval; i < rval; i++) {
+            if (i % kval == 0) {
+              count++;
+            }
+          }
+          document.getElementById("pp").innerHTML =
+            "The number of items divisible by: " + kval + " is: " + count;
+        }
+      }
+
+      function myff() {
+        document.getElementById("mydd").style.borderRadius = "50%";
+        document.getElementById("mydd").style.transition = "0.9s all linear";
+      }
+    </script>
+  </body>
+</html>
