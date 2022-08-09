@@ -1,0 +1,69 @@
+body {
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: yellow;
+}
+
+input {
+  height: 30px;
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: red;
+}
+
+button {
+  height: 50px;
+  width: 200px;
+  background-color: orange;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#mydiv {
+  height: 0;
+  width: 0;
+  background-color: blue;
+  transition: 0.8s all linear;
+}
+
+#maindiv {
+  /* width: 100%; */
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  /*flex-direction: row;*/
+  /* border: 2px solid black;  */
+}
+
+/* .box:hover {
+  transition: 0.01s all linear;
+  color: white;
+  border-radius: 50%;
+} */
+
+/* .animated {
+  animation: 1600ms zoomin infinite alternate ease-in-out;
+} */
+
+@keyframes zoomin {
+  0% {
+    border-radius: 0;
+  }
+  25% {
+    border-radius: 25%;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  75% {
+    border-radius: 25%;
+  }
+  100% {
+    border-radius: 0;
+  }
+}
