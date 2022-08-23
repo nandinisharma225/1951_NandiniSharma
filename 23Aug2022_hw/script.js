@@ -16,16 +16,26 @@ function myfunc() {
     return a.age - b.age;
   });
 
+  let flag = false;
+
   // console.log(nameinp);
-  for (let i = 0; i < 4; i++) {
-    if (employees[i].age == nameinp) {
-      console.log(
-        employees[i].name +
-          " " +
-          employees[i].age +
-          " " +
-          employees[i].retiredate
-      );
+  try {
+    for (let i = 0; i < 4; i++) {
+      if (employees[i].age == nameinp) {
+        console.log(
+          employees[i].name +
+            " " +
+            employees[i].age +
+            " " +
+            employees[i].retiredate
+        );
+        flag = true;
+      }
     }
+    if (flag == false) {
+      throw "Record not found";
+    }
+  } catch (err) {
+    console.log(err);
   }
 }
