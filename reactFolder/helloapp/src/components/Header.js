@@ -6,6 +6,7 @@ const Header = ({ title }) => {
       <h1 style={headingStyle}>Hello {title}</h1>
       <h2 className="h2class">H2 heading</h2>
       <p id="pid">My name is a react app</p>
+      <button className="btn">Click</button>
     </header>
   );
 };

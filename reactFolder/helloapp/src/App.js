@@ -1,12 +1,15 @@
 // import logo from "./logo.svg";
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import Button from "./components/Button";
 import "./App.css";
 
 function App() {
+  const onClick = () => {
+    console.log("helloworld");
+  };
   return (
     <header className="container">
-      {/* <h1>Hello</h1> */}
-      <Header />
+      <Button text="hello" color="green" onClick1={onClick}></Button>
     </header>
   );
 }

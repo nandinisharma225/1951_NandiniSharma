@@ -1,0 +1,27 @@
+.demo{
+    text-align: justify;
+    padding: 10px;
+}
+
+.demo1{
+    text-align: center;
+    padding:20px;
+}
+
+.demo1 label{
+    display: block;
+    padding: 10px;
+}
+
+fieldset{
+    /* outline: 5px; */
+    border: 5px dashed black;
+    margin: 10px;
+    padding: 20px;
+}
+
+fieldset legend{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
