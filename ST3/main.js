@@ -10,8 +10,8 @@ import marsTexture from "./mars.jpg";
 import jupiterTexture from "./jupiter.jpg";
 import saturnTexture from "./saturn.jpg";
 import saturnRingTexture from "./saturn ring.png";
+import uranusRingTexture from "./uranusRing.png";
 import uranusTexture from "./uranus.jpg";
-import uranusRingTexture from "./uranus ring.png";
 import neptuneTexture from "./neptune.jpg";
 import plutoTexture from "./pluto.jpg";
 
@@ -33,7 +33,7 @@ const camera = new THREE.PerspectiveCamera(
 
 const orbit = new OrbitControls(camera, renderer.domElement);
 
-camera.position.set(0, 150, 150);
+camera.position.set(0, 140, 140);
 orbit.update();
 
 const ambientLight = new THREE.AmbientLight(0x555555, 3);
@@ -81,6 +81,14 @@ function createPlanete(size, texture, position, ring) {
   });
   const mesh = new THREE.Mesh(geo, mat);
   const obj = new THREE.Object3D();
+
+  const ringmat = new THREE.RingGeometry(position, position + 0.3, 500);
+  const ringgeo = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+  });
+  const mercuryRing = new THREE.Mesh(ringmat, ringgeo);
+  scene.add(mercuryRing);
+
   obj.add(mesh);
   if (ring) {
     const ringGeo = new THREE.RingGeometry(
@@ -115,10 +123,11 @@ const saturn = createPlanete(10, saturnTexture, 300, {
   texture: saturnRingTexture,
 });
 const uranus = createPlanete(7, uranusTexture, 360, {
-  innerRadius: 7,
-  outerRadius: 12,
+  innerRadius: 10,
+  outerRadius: 20,
   texture: uranusRingTexture,
 });
+
 const neptune = createPlanete(7, neptuneTexture, 410);
 const pluto = createPlanete(2.8, plutoTexture, 450);
 
@@ -147,12 +156,13 @@ var plutobtn = document.getElementById("plut");
 
 var res, gravity;
 
-document.querySelector("#wtinp").addEventListener("click",()=>{
+document.querySelector("#wtinp").addEventListener("click", () => {
   res = parseFloat(prompt("Enter the weight of object on Earth:"));
-})
+});
 
 sunbtn.addEventListener("click", () => {
   zoomInTimeline(0, 25, 25);
+  infodiv.style.visibility = "visible";
   gravity = 27.07;
   outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
   outputpara2.innerHTML = "The weight on Sun's surface is: " + res * gravity;
@@ -161,7 +171,8 @@ mercurybtn.addEventListener("click", () => {
   zoomInTimeline(mercury.position, 5, 5);
   gravity = 0.38;
   outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Mercury's surface is: " + res * gravity;
+  outputpara2.innerHTML =
+    "The weight on Mercury's surface is: " + res * gravity;
 });
 venusbtn.addEventListener("click", () => {
   zoomInTimeline(venus.position, 10, 10);
@@ -185,7 +196,8 @@ jupiterbtn.addEventListener("click", () => {
   zoomInTimeline(jupiter.position, 17, 17);
   gravity = 2.34;
   outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Jupiter's surface is: " + res * gravity;
+  outputpara2.innerHTML =
+    "The weight on Jupiter's surface is: " + res * gravity;
 });
 saturnbtn.addEventListener("click", () => {
   zoomInTimeline(saturn.position, 15, 15);
@@ -203,7 +215,8 @@ neptunebtn.addEventListener("click", () => {
   zoomInTimeline(neptune.position, 10, 10);
   gravity = 1.19;
   outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Neptune's surface is: " + res * gravity;
+  outputpara2.innerHTML =
+    "The weight on Neptune's surface is: " + res * gravity;
 });
 plutobtn.addEventListener("click", () => {
   zoomInTimeline(pluto.position, 10, 10);

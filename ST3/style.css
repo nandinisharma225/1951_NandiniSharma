@@ -11,12 +11,12 @@ canvas {
 .mydiv {
   position: relative;
   z-index: 1;
-  top: 50%;
+  top: 30%;
 }
 
 .mydiv button {
   width: 100px;
-  height: 50px;
+  height: 45px;
   background-color: black;
   color: white;
   border: 2px solid white;
@@ -24,7 +24,7 @@ canvas {
   font-size: 1.2rem;
   padding: 2px;
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .mydiv #wtinp {
@@ -38,6 +38,10 @@ canvas {
   padding: 2px;
   display: block;
   margin-bottom: 3px;
+}
+
+.mydiv #wtinp{
+ background-color:rgb(39,37,37);
 }
 
 .mydiv button:hover {
@@ -68,6 +72,6 @@ canvas {
   float: left;
   padding: 70px;
   margin-top: 5%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
   /* border: 2px solid red; */
 }
