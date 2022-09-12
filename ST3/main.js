@@ -123,7 +123,7 @@ const saturn = createPlanete(10, saturnTexture, 300, {
   texture: saturnRingTexture,
 });
 const uranus = createPlanete(7, uranusTexture, 360, {
-  innerRadius: 10,
+  innerRadius: 5,
   outerRadius: 20,
   texture: uranusRingTexture,
 });
@@ -143,6 +143,14 @@ const zoomInTimeline = (x, y, z, zoomOutFactor = 0) => {
     .to(orbit.target, { x, y, z })
     .to(camera.position, { x, y, z: z + zoomOutFactor }, 0);
 };
+
+const zoomOutTimeline = (x, y, z) => {
+  let tl1 = gsap
+    .timeline({ defaults: { duration: 1.5, ease: "ease.in" } })
+    .to(orbit.target, { x, y, z })
+    .to(camera.position, { x, y, z }, 0);
+};
+
 var sunbtn = document.getElementById("sun");
 var mercurybtn = document.getElementById("merc");
 var venusbtn = document.getElementById("venu");
@@ -153,6 +161,7 @@ var saturnbtn = document.getElementById("satu");
 var uranusbtn = document.getElementById("uran");
 var neptunebtn = document.getElementById("nept");
 var plutobtn = document.getElementById("plut");
+var zout = document.getElementById("zoomout");
 
 var res, gravity;
 
@@ -160,69 +169,118 @@ document.querySelector("#wtinp").addEventListener("click", () => {
   res = parseFloat(prompt("Enter the weight of object on Earth:"));
 });
 
+zout.addEventListener("click", () => {
+  zoomOutTimeline(0, 140, 140);
+});
+
 sunbtn.addEventListener("click", () => {
-  zoomInTimeline(0, 25, 25);
-  infodiv.style.visibility = "visible";
-  gravity = 27.07;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Sun's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(0, 25, 25);
+    infodiv.style.visibility = "visible";
+    gravity = 27.07;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML = "The weight on Sun's surface is: " + res * gravity;
+  }
 });
 mercurybtn.addEventListener("click", () => {
-  zoomInTimeline(mercury.position, 5, 5);
-  gravity = 0.38;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML =
-    "The weight on Mercury's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(mercury.position, 5, 5);
+    gravity = 0.38;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML =
+      "The weight on Mercury's surface is: " + res * gravity;
+  }
 });
 venusbtn.addEventListener("click", () => {
-  zoomInTimeline(venus.position, 10, 10);
-  gravity = 0.91;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Venus's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(venus.position, 10, 10);
+    gravity = 0.91;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML =
+      "The weight on Venus's surface is: " + res * gravity;
+  }
 });
 earthbtn.addEventListener("click", () => {
-  zoomInTimeline(earth.position, 10, 10);
-  gravity = 1;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Earth's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(earth.position, 10, 10);
+    gravity = 1;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML =
+      "The weight on Earth's surface is: " + res * gravity;
+  }
 });
 marsbtn.addEventListener("click", () => {
-  zoomInTimeline(mars.position, 8, 8);
-  gravity = 0.38;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Mars's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(mars.position, 8, 8);
+    gravity = 0.38;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML = "The weight on Mars's surface is: " + res * gravity;
+  }
 });
 jupiterbtn.addEventListener("click", () => {
-  zoomInTimeline(jupiter.position, 17, 17);
-  gravity = 2.34;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML =
-    "The weight on Jupiter's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(jupiter.position, 17, 17);
+    gravity = 2.34;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML =
+      "The weight on Jupiter's surface is: " + res * gravity;
+  }
 });
 saturnbtn.addEventListener("click", () => {
-  zoomInTimeline(saturn.position, 15, 15);
-  gravity = 1.06;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Saturn's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(saturn.position, 15, 15);
+    gravity = 1.06;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML =
+      "The weight on Saturn's surface is: " + res * gravity;
+  }
 });
 uranusbtn.addEventListener("click", () => {
-  zoomInTimeline(uranus.position, 10, 10);
-  gravity = 0.92;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Uranus's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(uranus.position, 10, 10);
+    gravity = 0.92;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML =
+      "The weight on Uranus's surface is: " + res * gravity;
+  }
 });
 neptunebtn.addEventListener("click", () => {
-  zoomInTimeline(neptune.position, 10, 10);
-  gravity = 1.19;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML =
-    "The weight on Neptune's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(neptune.position, 10, 10);
+    gravity = 1.19;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML =
+      "The weight on Neptune's surface is: " + res * gravity;
+  }
 });
 plutobtn.addEventListener("click", () => {
-  zoomInTimeline(pluto.position, 10, 10);
-  gravity = 0.06;
-  outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
-  outputpara2.innerHTML = "The weight on Pluto's surface is: " + res * gravity;
+  if (res == undefined) {
+    alert("please enter the weight of the object");
+  } else {
+    zoomInTimeline(pluto.position, 10, 10);
+    gravity = 0.06;
+    outputpara1.innerHTML = "The weight on Earth's surface is: " + res;
+    outputpara2.innerHTML =
+      "The weight on Pluto's surface is: " + res * gravity;
+  }
 });
 
 function animate() {
