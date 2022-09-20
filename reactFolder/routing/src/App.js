@@ -9,7 +9,7 @@ import Form from "./components/Form.js";
 function App() {
   return (
     <Router>
-      <div>
+      <div >
         <Route exact path="/" component={Home} />
         <Route exact path="/About" component={About} />
         <Route exact path="/Form" component={Form} />

@@ -2,18 +2,18 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import "./style.css";
-import sunTexture from "./sun.jpg";
-import mercuryTexture from "./mercury.jpg";
-import venusTexture from "./venus.jpg";
-import earthTexture from "./earth.jpg";
-import marsTexture from "./mars.jpg";
-import jupiterTexture from "./jupiter.jpg";
-import saturnTexture from "./saturn.jpg";
-import saturnRingTexture from "./saturn ring.png";
-import uranusRingTexture from "./uranusRing.png";
-import uranusTexture from "./uranus.jpg";
-import neptuneTexture from "./neptune.jpg";
-import plutoTexture from "./pluto.jpg";
+import sunTexture from "./images/sun.jpg";
+import mercuryTexture from "./images/mercury.jpg";
+import venusTexture from "./images/venus.jpg";
+import earthTexture from "./images/earth.jpg";
+import marsTexture from "./images/mars.jpg";
+import jupiterTexture from "./images/jupiter.jpg";
+import saturnTexture from "./images/saturn.jpg";
+import saturnRingTexture from "./images/saturn ring.png";
+import uranusRingTexture from "./images/uranusRing.png";
+import uranusTexture from "./images/uranus.jpg";
+import neptuneTexture from "./images/neptune.jpg";
+import plutoTexture from "./images/pluto.jpg";
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
@@ -131,7 +131,7 @@ const uranus = createPlanete(7, uranusTexture, 360, {
 const neptune = createPlanete(7, neptuneTexture, 410);
 const pluto = createPlanete(2.8, plutoTexture, 450);
 
-const backgroundScene = textureLoader.load("stars.jpg");
+const backgroundScene = textureLoader.load("./images/stars.jpg");
 scene.background = backgroundScene;
 
 const pointLight = new THREE.PointLight(0xffffff, 2, 300);

@@ -1,0 +1,42 @@
+input {
+  display: block;
+  padding: 3px;
+  margin: 3px;
+  width: 90%;
+}
+
+input[type="submit"] {
+  height: 3rem;
+  width: 5rem;
+  font-size: 1rem;
+  background-color: green;
+  color: white;
+  border: 2px solid green;
+  border-radius: 7px;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(32, 181, 32);
+  border: 2px solid rgb(32, 181, 32);
+}
+
+legend {
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+fieldset {
+  border: 5px dashed yellow;
+  margin: 10px;
+}
+
+span{
+    display: block;
+    margin-top: 20px;
+}

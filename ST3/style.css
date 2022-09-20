@@ -24,6 +24,7 @@ canvas {
   padding: 2px;
   display: block;
   margin-bottom: 2px;
+  cursor: pointer;
 }
 
 .mydiv #wtinp {
