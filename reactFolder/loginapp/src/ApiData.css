@@ -1,0 +1,13 @@
+table{
+    border: 2px solid black;
+    /* padding: 10px; */
+}
+
+table td{
+    padding: 10px;
+}
+
+.dataDiv{
+    /* text-align: center; */
+    margin-left: 30%;
+}
